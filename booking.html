@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Booking - Booking</title>
+  <style>
+    /* Background styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('images/booking-bg.avif'); /* Update to the correct path */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: black; /* Changed text color to black */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Navbar styling */
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      z-index: 1000;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 24px;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Form container styling */
+    section {
+      margin-top: 100px;
+      text-align: center;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.8); /* Removed the box shadow and dark background */
+      border-radius: 15px;
+      max-width: 500px;
+      width: 90%;
+      padding: 20px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 15px 0 5px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc; /* Light border */
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input, select {
+      background-color: #fff;
+      color: #000;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      form {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>Travel Booking</h1>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="destinations.html" class="nav-link">Destinations</a>
+      <a href="booking.html" class="nav-link">Booking</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+    </div>
+  </div>
+
+  <section>
+    <h1>Book Your Trip</h1>
+    <form id="booking-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="destination">Destination:</label>
+      <select id="destination" name="destination">
+        <option>Bali</option>
+        <option>Paris</option>
+        <option>Kyoto</option>
+      </select>
+
+      <label for="date">Travel Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+    <!-- javascript code-->
+    <script>
+      document.getElementById('booking-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+  
+          // Get form data
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const destination = document.getElementById('destination').value;
+          const date = document.getElementById('date').value;
+  
+          // Show a success message with user details
+          alert(`Thank you, ${name}! Your booking for ${destination} on ${date} has been submitted. A confirmation email will be sent to ${email}.`);
+      });
+    </script>
+ 
+  
+</body>
+</html>
